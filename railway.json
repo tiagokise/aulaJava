@@ -1,1 +1,1 @@
-{\n  "build": {\n    "lang": "java",\n    "version": "17"\n  }\n}
+{"$schema":"https://railway.app/railway.schema.json","build":{"builder":"nixpacks"}}
