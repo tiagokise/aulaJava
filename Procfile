@@ -1,1 +1,1 @@
-web: javac ServidorWeb.java && java ServidorWeb
+web: java ServidorWeb
