@@ -19,6 +19,9 @@
     <!-- All .java files live in the project root, not src/main/java -->
     <sourceDirectory>.</sourceDirectory>
 
+    <!-- Compiled classes land in target/classes (Maven default) -->
+    <outputDirectory>${project.build.directory}/classes</outputDirectory>
+
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -34,6 +37,7 @@
         </configuration>
       </plugin>
 
+      <!-- Disable the default jar plugin so shade produces the only JAR -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
@@ -45,6 +49,30 @@
             </manifest>
           </archive>
         </configuration>
+      </plugin>
+
+      <!-- Shade plugin: packages all classes into a single executable JAR -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.5.1</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <createDependencyReducedPom>false</createDependencyReducedPom>
+              <shadedArtifactAttached>false</shadedArtifactAttached>
+              <transformers>
+                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                  <mainClass>ServidorWeb</mainClass>
+                </transformer>
+              </transformers>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
