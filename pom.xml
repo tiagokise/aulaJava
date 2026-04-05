@@ -16,12 +16,6 @@
   </properties>
 
   <build>
-    <!-- All .java files live in the project root, not src/main/java -->
-    <sourceDirectory>.</sourceDirectory>
-
-    <!-- Compiled classes land in target/classes (Maven default) -->
-    <outputDirectory>${project.build.directory}/classes</outputDirectory>
-
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -30,10 +24,6 @@
         <configuration>
           <source>17</source>
           <target>17</target>
-          <excludes>
-            <!-- Exclude Maven's own generated sources from compilation -->
-            <exclude>target/**</exclude>
-          </excludes>
         </configuration>
       </plugin>
 
