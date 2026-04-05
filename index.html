@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Aulas de Java</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 700px; margin: 50px auto; background: #f5f5f5; padding: 0 20px; }
+        h1 { color: #e76f00; }
+        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        a { color: #e76f00; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .aulas-lista { list-style: none; padding: 0; }
+        .aulas-lista li { margin: 0; }
+        .aulas-lista a {
+            display: block;
+            padding: 14px 16px;
+            border-bottom: 1px solid #eee;
+            transition: background 0.2s;
+        }
+        .aulas-lista a:hover { background: #fff8f0; }
+        .aulas-lista li:last-child a { border-bottom: none; }
+        .numero { color: #999; margin-right: 8px; }
+        .arquivo { color: #888; font-size: 0.85em; margin-left: 6px; }
+        .saudacao { margin-top: 10px; }
+        input { padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+        button { padding: 8px 16px; background: #e76f00; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #c45e00; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Aulas de Java</h1>
+        <p>Esta página é servida por um servidor escrito em Java! Clique em uma aula para ver a explicação e o código-fonte.</p>
+
+        <ul class="aulas-lista">
+            <li><a href="/aula?id=1"><span class="numero">01</span> Hello World <span class="arquivo">HelloWorld.java</span></a></li>
+            <li><a href="/aula?id=2"><span class="numero">02</span> Variáveis <span class="arquivo">Variaveis.java</span></a></li>
+            <li><a href="/aula?id=3"><span class="numero">03</span> Condicionais <span class="arquivo">Condicionais.java</span></a></li>
+            <li><a href="/aula?id=4"><span class="numero">04</span> Loops <span class="arquivo">Loops.java</span></a></li>
+            <li><a href="/aula?id=5"><span class="numero">05</span> Arrays <span class="arquivo">ArraysJava.java</span></a></li>
+            <li><a href="/aula?id=6"><span class="numero">06</span> Métodos <span class="arquivo">Metodos.java</span></a></li>
+            <li><a href="/aula?id=7"><span class="numero">07</span> Orientação a Objetos <span class="arquivo">Carro.java + Garagem.java</span></a></li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Saudação Dinâmica</h2>
+        <form action="/saudacao" method="GET" class="saudacao">
+            <input type="text" name="nome" placeholder="Digite seu nome">
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>
