@@ -1,1 +1,1 @@
-web: java ServidorWeb
+web: java -jar target/aulaJava-1.0.0.jar
